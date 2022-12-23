@@ -1,0 +1,8 @@
+## Interface: 100002
+
+## Title: zCustomRotation
+## Author: ME
+## Version: 1.0
+## Notes: This is a routine made by me.
+
+HPal.lua
