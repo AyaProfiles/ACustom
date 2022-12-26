@@ -1,0 +1,13 @@
+package-as: ACustom
+
+move-folders:
+     ACustom/ACustom: ACustom
+
+
+ignore:
+    - .gitattributes
+    - .gitignore
+    - .pkgmeta
+
+enable-nolib-creation: no
+
