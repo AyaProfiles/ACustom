@@ -264,12 +264,14 @@ return
 
 QKKks_zt:BuffDown(pVRj.BeaconOfLightBuff)and QKKks_zt:BuffDown(pVRj.BeaconOfFaithBuff)and
 (
+(GetNumGroupMembers()<=5 and
+(
 
 
-(tczrIB and tczrIB==QKKks_zt:GUID())or(XL_ and XL_==
-QKKks_zt:GUID())or(
-a and a==QKKks_zt:GUID())or(Ch and Ch==QKKks_zt:GUID())or(urkh and urkh==QKKks_zt:GUID())or
-(not tczrIB and not XL_ and not a and not Ch and not urkh))end)then return'Beacon Faith Members'end end
+
+
+(tczrIB and tczrIB==QKKks_zt:GUID())or(XL_ and XL_==QKKks_zt:GUID())or(a and a==QKKks_zt:GUID())or(Ch and Ch==QKKks_zt:GUID())or(urkh and urkh==QKKks_zt:GUID())or
+(not tczrIB and not XL_ and not a and not Ch and not urkh)))or GetNumGroupMembers()>5)end)then return'Beacon Faith Members'end end
 if DFb100j then if pVRj.AuraMastery:IsReady()then if ZG(pVRj.AuraMastery)then
 return'AuraMastery'end end
 if
