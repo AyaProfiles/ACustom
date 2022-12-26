@@ -1,0 +1,30 @@
+package-as: HeroRotation
+
+required-dependencies:
+    - 410191-herodbc
+    - 271528-herolib
+
+move-folders:
+     HeroRotation/HeroRotation: HeroRotation
+     HeroRotation/HeroRotation_DeathKnight: HeroRotation_DeathKnight
+     HeroRotation/HeroRotation_DemonHunter: HeroRotation_DemonHunter
+     HeroRotation/HeroRotation_Druid: HeroRotation_Druid
+     HeroRotation/HeroRotation_Evoker: HeroRotation_Evoker
+     HeroRotation/HeroRotation_Hunter: HeroRotation_Hunter
+     HeroRotation/HeroRotation_Mage: HeroRotation_Mage
+     HeroRotation/HeroRotation_Monk: HeroRotation_Monk
+     HeroRotation/HeroRotation_Paladin: HeroRotation_Paladin
+     HeroRotation/HeroRotation_Priest: HeroRotation_Priest
+     HeroRotation/HeroRotation_Rogue: HeroRotation_Rogue
+     HeroRotation/HeroRotation_Shaman: HeroRotation_Shaman
+     HeroRotation/HeroRotation_Warlock: HeroRotation_Warlock
+     HeroRotation/HeroRotation_Warrior: HeroRotation_Warrior
+
+ignore:
+    - HeroRotation_ClassTemplate
+    - symlink.bat
+    - symlink.sh
+
+enable-nolib-creation: no
+
+license-output: LICENSE
