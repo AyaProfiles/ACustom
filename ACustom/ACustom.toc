@@ -1,8 +1,9 @@
 ## Interface: 100002
 
-## Title: zCustomRotation
-## Author: ME
+## Title: ACustom
+## Author: Aya
 ## Version: 1.0
-## Notes: This is a routine made by me.
+## Notes: This is a routine made by Aya.
 
 HPal.lua
+RDruid.lua
