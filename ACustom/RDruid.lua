@@ -7,11 +7,11 @@ local Vu0cCAf=er.AoEON;local pVRj=er.CDsON;local pVRj=yxjl.Druid.Restoration;loc
 local mP3mlD,mP3mlD;local mP3mlD=fuZ3z86.Config.GetClassSetting;local tczrIB="Aya_Rdruid_Config"
 local mP3mlD='FF7C0A'
 local mP3mlD={key=tczrIB,title='Aya - Restoration Druid',subtitle='Aya '..fuZ3z86.Version,width=470,height=650,profiles=true,config={{type='header',text='Restoration',size=24,align='Center',color=mP3mlD},{type='spacer'},{type='ruler'},{type='spacer'},{type='header',text='Spells',color=mP3mlD},{type='spinner',text='DPS Threshold',key='DPSThreshold1',min=1,max=100,default=80},{type='spinner',text='Regrowth',key='RegrowthHP',min=1,max=100,default=75},{type='spinner',text='Regrowth Refresh',key='RegrowthHP2',min=1,max=100,default=50},{type='spinner',text='Rejuvenation',key='RejuvenationHP',min=1,max=100,default=85},{type='spinner',text='Wild Growth',key='WildGrowthHP',min=1,max=100,default=85},{type='spinner',text='Wild Growth Units',key='WildGrowthNum',min=1,max=40,default=3},{type='spinner',text='Efflorescence',key='EfflorescenceHP',min=1,max=100,default=100},{type='spinner',text='Efflorescence Units',key='EfflorescenceNum',min=1,max=40,default=1},{type='spinner',text='Ironbark',key='IronbarkHP',min=1,max=100,default=50},{type='spinner',text='Swiftmend',key='SwiftmendHP',min=1,max=100,default=80},{type='spinner',text='Convoke the Spirits',key='ConvokeHP',min=1,max=100,default=70},{type='spinner',text='Convoke the Spirits Units',key='ConvokeNum',min=1,max=40,default=3},{type='spacer'},{type='header',text='Defensive',color=mP3mlD},{type='spinner',text='Barkskin',key='BarkSkinHP',min=1,max=100,default=60},{type='spinner',text='Renewal',key='RenewalHP',min=1,max=100,default=70},{type='spacer'},{type='header',text='Class',color=mP3mlD},{type='spinner',text="Cooldowns HP",key='CooldownSlider',min=1,max=100,default=75},{type='dropdown',text='Cooldown Options',key='CooldownOption',list={{text='Auto',key=1},{text='Manually',key=2}},default=1},{type='dropdown',text='Convoke the Spirits',key='ConvokeOption',list={{text='Heal',key=1},{text='Heal + Damage',key=2}},default=2},{type='checkbox',text='Form Swap for DPS',key='FormSwap',default=true},{type='checkbox',text='Mana Management',key='ManaManagement',default=true}}}fuZ3z86.SetCustomConfig(_IQQ,XpkjA,mP3mlD)local function a()end
-local wqU76o,LB1Z,N9L,hDc_M,qW0lRiD1,iD1IUx,JLCOx_ak;local hPQ,R1FIoQI,NsoTwDs,HGli;local iy,mP3mlD,m6SCS0,NUhYw6R4;local Hv,Ch,urkh;local tczrIB={}
+local wqU76o,LB1Z,N9L,hDc_M,qW0lRiD1,iD1IUx,JLCOx_ak;local hPQ,R1FIoQI,NsoTwDs,HGli;local iy,m6SCS0,NUhYw6R4,mP3mlD;local Hv,Ch,urkh;local tczrIB={}
 XL_:RegisterForEvent(function(QKKks_zt,...)
-local Are7xU,pVRj,ZG,fuZ3z86=...
-if QKKks_zt=="UNIT_SPELLCAST_SENT"then if Are7xU=="player"and pVRj then
-currentspell=fuZ3z86;currentspelltarget=pVRj end end
+local ZG,pVRj,Are7xU,fuZ3z86=...
+if QKKks_zt=="UNIT_SPELLCAST_SENT"then if ZG=="player"and pVRj then currentspell=fuZ3z86
+currentspelltarget=pVRj end end
 if QKKks_zt=="UI_ERROR_MESSAGE"then if pVRj==SPELL_FAILED_LINE_OF_SIGHT then
 missedunit=currentspelltarget;missedspell=currentspell end end end,"UI_ERROR_MESSAGE","UNIT_SPELLCAST_SENT")local function zhzpBSx(pVRj)if pVRj then return 1 else return 0 end end;local function rHSjalVy(pVRj)
 return pVRj~=0 end
@@ -32,13 +32,13 @@ LB1Z=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"CooldownSlider")
 wqU76o=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"CooldownOption")
 Hv=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"ConvokeOption")
 iy=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"TopTrinketTarget")
-mP3mlD=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"TopTrinketOption")
-m6SCS0=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"BotTrinketTarget")
-NUhYw6R4=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"BotTrinketOption")
+m6SCS0=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"TopTrinketOption")
+NUhYw6R4=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"BotTrinketTarget")
+mP3mlD=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"BotTrinketOption")
 BarkSkinHP=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"BarkSkinHP")
 Ch=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"FormSwap")
 urkh=fuZ3z86.Config.GetSetting('Aya_Rdruid_Config',"ManaManagement")end
-local function mP3mlD(QKKks_zt,fuZ3z86)local Are7xU,pVRj
+local function mP3mlD(QKKks_zt,fuZ3z86)local ZG,pVRj
 if not fuZ3z86 then if GetUnitName("player",true)==QKKks_zt then return
 UnitGUID("player")end
 if GetUnitName("target",true)==
@@ -78,7 +78,7 @@ if(WYdR(pVRj):BuffUp(yxjl(365153)))then
 for QKKks_zt=1,40 do if
 select(10,UnitBuff(pVRj,QKKks_zt))==365153 then
 return select(16,UnitBuff(pVRj,QKKks_zt))end end else return 0 end end
-local function iy(fuZ3z86)
+local function m6SCS0(fuZ3z86)
 if fuZ3z86 ==nil or type(fuZ3z86)=="string"then return nil end;fuZ3z86=fuZ3z86/100;local pVRj=0
 if GetNumGroupMembers()>0 and
 GetNumGroupMembers()<=5 then
@@ -87,10 +87,10 @@ if
 UnitExists("party"..QKKks_zt)and
 not WYdR("party"..QKKks_zt):IsDeadOrGhost()and
 WYdR("party"..QKKks_zt):DebuffDown(yxjl(228578))then
-local Are7xU=UnitHealth("party"..
+local ZG=UnitHealth("party"..
 QKKks_zt)+
-(UnitGetIncomingHeals("party"..QKKks_zt)or 0)-tczrIB("party"..QKKks_zt)local QKKks_zt=UnitHealthMax("party"..QKKks_zt)if
-Are7xU/QKKks_zt<fuZ3z86 then pVRj=pVRj+1 end end end;if
+(UnitGetIncomingHeals("party"..QKKks_zt)or 0)-tczrIB("party"..QKKks_zt)local QKKks_zt=UnitHealthMax("party"..QKKks_zt)if ZG/QKKks_zt<
+fuZ3z86 then pVRj=pVRj+1 end end end;if
 (
 ((UnitHealth("player")+
 (UnitGetIncomingHeals("player")or 0))/
@@ -104,21 +104,21 @@ if
 UnitExists("raid"..QKKks_zt)and not UnitIsDead("raid"..QKKks_zt)and
 WYdR("raid"..QKKks_zt):DebuffDown(yxjl(362075))and
 WYdR("raid"..QKKks_zt):DebuffDown(yxjl(362397))and
-WYdR("raid"..QKKks_zt):DebuffDown(yxjl(191587))then local Are7xU=0
-local Are7xU=
+WYdR("raid"..QKKks_zt):DebuffDown(yxjl(191587))then local ZG=0
+local ZG=
 UnitHealth("raid"..QKKks_zt)+ (
-UnitGetIncomingHeals("raid"..QKKks_zt)or 0)-tczrIB("raid"..QKKks_zt)local QKKks_zt=UnitHealthMax("raid"..QKKks_zt)if Are7xU/QKKks_zt<
-fuZ3z86 then pVRj=pVRj+1 end end end end
+UnitGetIncomingHeals("raid"..QKKks_zt)or 0)-tczrIB("raid"..QKKks_zt)local QKKks_zt=UnitHealthMax("raid"..QKKks_zt)if
+ZG/QKKks_zt<fuZ3z86 then pVRj=pVRj+1 end end end end
 if GetNumGroupMembers()==0 then
-local Are7xU=UnitHealth("player")+ (
+local ZG=UnitHealth("player")+ (
 UnitGetIncomingHeals("player")or 0)-
-tczrIB("player")local QKKks_zt=UnitHealthMax("player")if Are7xU/QKKks_zt<fuZ3z86 then
+tczrIB("player")local QKKks_zt=UnitHealthMax("player")if ZG/QKKks_zt<fuZ3z86 then
 pVRj=pVRj+1 end end;return pVRj end
-local function m6SCS0()
-for QKKks_zt=1,4 do local ZG,QKKks_zt,fuZ3z86,Are7xU=GetTotemInfo(QKKks_zt)
-if QKKks_zt==
+local function iy()
+for QKKks_zt=1,4 do local Are7xU,fuZ3z86,QKKks_zt,ZG=GetTotemInfo(QKKks_zt)
+if fuZ3z86 ==
 pVRj.Efflorescence:Name()then return
-(floor(fuZ3z86+Are7xU-GetTime()+.5))or 0 end end;return 0 end
+(floor(QKKks_zt+ZG-GetTime()+.5))or 0 end end;return 0 end
 local function yxjl()
 if
 
@@ -237,10 +237,10 @@ local function Hv()local Ch,Hv,tczrIB,Hv,Hv,Hv=DFb100j:Update()rHSjalVy()
 if Vu0cCAf()then
 qkP7O5=QKKks_zt:GetEnemiesInRangeFilter(10)Enemies10ySplash=WYdR:GetEnemiesInSplashRange(10)
 lqT=#qkP7O5;PrPyxMK=WYdR:GetEnemiesInSplashRangeCount(10)else lqT=1
-PrPyxMK=1 end;local XL_=XL_.CombatTime()
-local lqT=not QKKks_zt:IsMoving()
-local lqT=(QKKks_zt:HealthPercentage()>=60)local lqT=Are7xU:IsInMeleeRange(5)
-local lqT=
+PrPyxMK=1 end;local lqT=XL_.CombatTime()
+local XL_=not QKKks_zt:IsMoving()
+local XL_=(QKKks_zt:HealthPercentage()>=60)local XL_=Are7xU:IsInMeleeRange(5)
+local XL_=
 
 #tczrIB>1 and
 (wqU76o==1 and
@@ -248,7 +248,7 @@ DFb100j:AverageHP()<=LB1Z or wqU76o==2)and not
 QKKks_zt:IsChanneling(pVRj.Tranquility)and QKKks_zt:BuffDown(pVRj.Flourish)and QKKks_zt:BuffDown(pVRj.IncarnationTreeofLife)local wqU76o=Vu0cCAf()and#tczrIB>=1
 if
 Are7xU:IsAPlayer()and
-Are7xU:IsDeadOrGhost()and not Are7xU:IsEnemy()and Are7xU:IsInParty()then if XL_==0 and
+Are7xU:IsDeadOrGhost()and not Are7xU:IsEnemy()and Are7xU:IsInParty()then if lqT==0 and
 pVRj.Revive:IsReady(QKKks_zt)then
 if ZG(pVRj.Revive)then return'Resurrection'end end end;if pVRj.Barkskin:IsReady()and
 QKKks_zt:HealthPercentage()<BarkSkinHP then
@@ -256,7 +256,7 @@ if ZG(pVRj.Barkskin)then return'Barkskin Defensive'end end
 if
 
 pVRj.Renewal:IsReady()and QKKks_zt:HealthPercentage()<RenewalHP then if ZG(pVRj.Renewal)then return'Renewal Deffensive'end end
-if pVRj.AdaptiveSwarm:IsCastable()and not lqT then
+if pVRj.AdaptiveSwarm:IsCastable()and not XL_ then
 if
 fuZ3z86.CastCycleAlly(pVRj.AdaptiveSwarm,tczrIB,function(QKKks_zt)return
 
@@ -273,7 +273,7 @@ if
 fuZ3z86.CastCycleAlly(pVRj.AdaptiveSwarm,tczrIB,function(QKKks_zt)return
 QKKks_zt:BuffStack(pVRj.AdaptiveSwarmBuff)==
 0 and not mP3mlD(QKKks_zt)end)then return'Adaptive Swarm Members 0 Stacks'end end
-if lqT then
+if XL_ then
 if pVRj.Ironbark:IsReady()then
 if
 fuZ3z86.CastCycleAlly(pVRj.Ironbark,tczrIB,function(pVRj)
@@ -368,7 +368,7 @@ mP3mlD(QKKks_zt)end)then return'Lifebloom Tanks - No S.Undergrowth'end end
 if
 pVRj.TreantForm:IsReady(QKKks_zt)and
 QKKks_zt:BuffDown(pVRj.TreantForm)and
-not QKKks_zt:AffectingCombat()and iy(90)==0 then
+not QKKks_zt:AffectingCombat()and m6SCS0(90)==0 then
 if ZG(pVRj.TreantForm)then return"Treant Form to look cool"end end
 if
 
@@ -376,13 +376,13 @@ if
 
 
 pVRj.Efflorescence:IsReady()and(er.TargetIsValid()or
-QKKks_zt:AffectingCombat())and not QKKks_zt:IsMoving()and m6SCS0()<2 and
-iy(NsoTwDs)>=HGli and not lqT and
+QKKks_zt:AffectingCombat())and not QKKks_zt:IsMoving()and iy()<2 and
+m6SCS0(NsoTwDs)>=HGli and not XL_ and
 (
 (QKKks_zt:BuffDown(pVRj.CatForm)and QKKks_zt:BuffDown(pVRj.BearForm))or not QKKks_zt:AffectingCombat())then
 if ZG(pVRj.Efflorescence)then return"Efflorescence Members"end end
 if
-QKKks_zt:AffectingCombat()and iy(DPSThreshold)==0 and er.TargetIsValid()then return yxjl()end
+QKKks_zt:AffectingCombat()and m6SCS0(DPSThreshold)==0 and er.TargetIsValid()then return yxjl()end
 if pVRj.Swiftmend:CooldownRemains()<=0 and not
 QKKks_zt:IsMoving()then
 if
@@ -393,16 +393,20 @@ QKKks_zt:HealthPercentage()<JLCOx_ak and
 (QKKks_zt:BuffUp(pVRj.Regrowth)or
 QKKks_zt:BuffUp(pVRj.WildGrowth)or QKKks_zt:BuffUp(pVRj.Rejuvenation))and not
 mP3mlD(QKKks_zt)end)then return'Swiftmend Members'end
+if(m6SCS0(hPQ)>=R1FIoQI or
+QKKks_zt:BuffUp(pVRj.IncarnationTreeofLifeBuff))and
+QKKks_zt:BuffDown(pVRj.SouloftheForestBuff)then
+if
+fuZ3z86.CastCycleAlly(pVRj.Swiftmend,tczrIB,function(QKKks_zt)return
+
+(
+QKKks_zt:BuffUp(pVRj.Regrowth)or QKKks_zt:BuffUp(pVRj.WildGrowth)or
+QKKks_zt:BuffUp(pVRj.Rejuvenation))and not mP3mlD(QKKks_zt)end)then return'Swiftmend Before WildGrowth'end end
 if
 
-(iy(hPQ)>=R1FIoQI or QKKks_zt:BuffUp(pVRj.IncarnationTreeofLifeBuff))and QKKks_zt:BuffDown(pVRj.SouloftheForestBuff)then
-if
-fuZ3z86.CastCycleAlly(pVRj.Swiftmend,tczrIB,function(pVRj)return not mP3mlD(pVRj)end)then return'Swiftmend Before WildGrowth'end end
-if
 
 
-
-pVRj.Rejuvenation:IsReady()and(iy(hPQ)>=R1FIoQI or
+pVRj.Rejuvenation:IsReady()and(m6SCS0(hPQ)>=R1FIoQI or
 QKKks_zt:BuffUp(pVRj.IncarnationTreeofLifeBuff))and DFb100j:BuffTotal(pVRj.Regrowth)==0 and DFb100j:BuffTotal(pVRj.WildGrowth)==0 and DFb100j:BuffTotal(pVRj.Rejuvenation)==0 then
 if
 fuZ3z86.CastCycleAlly(pVRj.Rejuvenation,tczrIB,function(pVRj)return not mP3mlD(pVRj)end)then return'Rejuv Members for Swiftmend into WildGrowth'end end end
@@ -412,7 +416,7 @@ pVRj.WildGrowth:IsCastable()and not QKKks_zt:IsMoving()and
 (QKKks_zt:BuffUp(pVRj.SouloftheForestBuff)or
 pVRj.Swiftmend:CooldownRemains()>0)and
 (
-iy(hPQ)>=R1FIoQI or QKKks_zt:BuffUp(pVRj.IncarnationTreeofLifeBuff))then if ZG(pVRj.WildGrowth)then return'Wild Growth Members'end end
+m6SCS0(hPQ)>=R1FIoQI or QKKks_zt:BuffUp(pVRj.IncarnationTreeofLifeBuff))then if ZG(pVRj.WildGrowth)then return'Wild Growth Members'end end
 if pVRj.CenarionWard:IsReady()then
 if
 fuZ3z86.CastCycleAlly(pVRj.CenarionWard,Ch,function(QKKks_zt)
@@ -425,7 +429,7 @@ fuZ3z86.CastCycleAlly(pVRj.Regrowth,tczrIB,function(pVRj)return pVRj:HealthPerce
 mP3mlD(pVRj)end)then return'Regrowth Members - Spam'end end
 if
 
-pVRj.Rejuvenation:IsCastable()and not lqT and
+pVRj.Rejuvenation:IsCastable()and not XL_ and
 (not urkh or
 
 QKKks_zt:ManaPercentage()>=WYdR("boss1"):HealthPercentage()+10 or(not UnitExists("boss1")and
