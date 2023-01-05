@@ -1,0 +1,8 @@
+<Bindings>
+    <Binding category="SimiaCore - Aya's profiles" name="Druid Resto: Spread Rejuv" header="Druid Restoration">
+        MainAddon.Toggle:Switch('SpreadRejuvenation')
+    </Binding>
+    <Binding category="SimiaCore - Aya's profiles" name="Druid Resto: Stop DPS">
+        MainAddon.Toggle:Switch('StopDPS')
+    </Binding>	
+</Bindings> 
