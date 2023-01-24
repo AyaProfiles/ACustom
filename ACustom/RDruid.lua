@@ -492,8 +492,11 @@ Ib4 =="TravelForm"and(QKKks_zt:BuffDown(pVRj.TravelForm)and
 QKKks_zt:BuffDown(Hv))and not IsIndoors()then if Vu0cCAf(pVRj.TravelForm)then return"Travel Form OOC"end elseif
 pVRj.TreantForm:IsCastable()and Ib4 =="TreantForm"and
 QKKks_zt:BuffDown(pVRj.TreantForm)then if Vu0cCAf(pVRj.TreantForm)then return
-"Treant Form OOC"end end end end;local function pVRj()N9L()return TqYJ4()end
-fuZ3z86.SetCustomAPL(_IQQ,XpkjA,pVRj,zPXTTg)local pVRj
-pVRj=XL_.AddCoreOverride("Spell.IsCastable",function(fuZ3z86,LB1Z,Vu0cCAf,Are7xU,QKKks_zt)QKKks_zt=true
-local pVRj,QKKks_zt=pVRj(fuZ3z86,LB1Z,Vu0cCAf,Are7xU,QKKks_zt)return pVRj,QKKks_zt end,105)end;local function ZA()
+"Treant Form OOC"end end end end
+StaticPopupDialogs["AYA_RDRUID_POPUP"]={text="SimiaCore: It seems you are Necrolord.\nYou may have issues with the talent Adaptive Swarm.\n\nPlease change your Covenant to Venthyr in Oribos.",button1="OK"}if C_Covenants.GetActiveCovenantID()==4 then
+StaticPopup_Show("AYA_RDRUID_POPUP")end
+local function pVRj()N9L()return TqYJ4()end;fuZ3z86.SetCustomAPL(_IQQ,XpkjA,pVRj,zPXTTg)local pVRj
+pVRj=XL_.AddCoreOverride("Spell.IsCastable",function(fuZ3z86,LB1Z,Vu0cCAf,Are7xU,QKKks_zt)
+QKKks_zt=true;local pVRj,QKKks_zt=pVRj(fuZ3z86,LB1Z,Vu0cCAf,Are7xU,QKKks_zt)return pVRj,
+QKKks_zt end,105)end;local function ZA()
 C_Timer.After(1,function()if MainAddon then Q()else ZA()end end)end;ZA()
